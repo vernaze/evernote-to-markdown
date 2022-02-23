@@ -18,7 +18,7 @@ function save(title, created, content, resources, baseDir) {
     console.log(`saved files to ${filepath}`);
 }
 
-export default async function main() {
+function getOptions() {
     const optionDefinitions = [{
             name: "dist",
             alias: "d",
@@ -48,7 +48,10 @@ export default async function main() {
         console.error("notebook name is required");
         process.exit(1);
     }
+    return options;
+}
 
+async function getToken() {
     let token = process.env.ACCESS_TOKEN;
     if (!token) {
         const answers = await inquirer.prompt([{
@@ -59,7 +62,12 @@ export default async function main() {
         token = answers.token;
         fs.writeFileSync(".env", `ACCESS_TOKEN='${token}'`);
     }
+    return token;
+}
 
+export default async function main() {
+    const options = getOptions();
+    const token = await getToken();
     const client = new Client(token);
     const notebooks = await client.getNotebook();
     const notebook = notebooks.find(
