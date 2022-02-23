@@ -1,9 +1,26 @@
 {
-    "name": "evernote-to-markdown",
+    "name": "@vernaze/evernote-to-markdown",
     "version": "1.0.0",
+    "description": "a simple CLI to download & convert evernote to markdown file",
     "author": "vernaze <vernaze@icloud.com>",
     "license": "MIT",
+    "main": "src/index.js",
+    "bin": {
+        "evernote-to-markdown": "bin/evernote-to-markdown.js"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
     "type": "module",
+    "keywords": [
+        "cli",
+        "evernote",
+        "markdown"
+    ],
+    "files": [
+        "bin/",
+        "src/"
+    ],
     "dependencies": {
         "command-line-args": "^5.2.1",
         "dotenv": "^16.0.0",
