@@ -1,0 +1,15 @@
+{
+    "name": "evernote-to-markdown",
+    "version": "1.0.0",
+    "author": "vernaze <vernaze@icloud.com>",
+    "license": "MIT",
+    "type": "module",
+    "dependencies": {
+        "command-line-args": "^5.2.1",
+        "dotenv": "^16.0.0",
+        "evernote": "^2.0.5",
+        "inquirer": "^8.2.0",
+        "js-md5": "^0.7.3",
+        "striptags": "^3.2.0"
+    }
+}
